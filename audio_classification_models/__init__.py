@@ -1,2 +1,2 @@
-from .models.conformer import ConformerEncoder
-from .models.contextnet import ContextNetEncoder
+from .models.conformer import ConformerEncoder, Conformer
+from .models.contextnet import ContextNetEncoder, ContextNet

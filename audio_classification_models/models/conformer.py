@@ -1,13 +1,13 @@
 import tensorflow as tf
 
-from ..utils import shape_util
+from ..utils import shape_util, weights
 from ..activations.glu import GLU
 from ..layers.multihead_attention import MultiHeadAttention, RelPositionMultiHeadAttention
 from ..layers.positional_encoding import PositionalEncoding, PositionalEncodingConcat
 from ..layers.subsampling import Conv2dSubsampling, VggSubsampling
 
 L2 = tf.keras.regularizers.l2(1e-6)
-
+URL = 'https://drive.google.com/file/d/1uwF_KJkcCVG44u5Be2Qb4Y_KJSPt39YB/view?usp=sharing'
 
 class FFModule(tf.keras.layers.Layer):
     def __init__(
@@ -411,4 +411,17 @@ class ConformerEncoder(tf.keras.Model):
         conf.update(self.pe.get_config())
         for cblock in self.conformer_blocks:
             conf.update(cblock.get_config())
-        return 
+        return conf
+
+def Conformer(input_shape = (128, 80, 1),num_classes=1, final_activation='sigmoid', pretrain=True):
+    inp = tf.keras.layers.Input(shape=input_shape)
+    backbone = ConformerEncoder()
+    out = backbone(inp)
+    if pretrain:
+        weights.load_pretrain(backbone, url=URL, fname='conformer-encoder.h5')
+    out = tf.keras.layers.GlobalAveragePooling1D()(out)
+    out = tf.keras.layers.Dense(32, activation='selu')(out)
+    out = tf.keras.layers.Dense(num_classes, activation=final_activation)(out)
+    model = tf.keras.models.Model(inp, out)
+    return model
+
