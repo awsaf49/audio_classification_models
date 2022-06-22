@@ -4,7 +4,7 @@ gdown>=4.4.0
 
 # extra=tf2.6
 tensorflow~=2.6
-ensorflow_probability~=0.14.1
+tensorflow_probability~=0.14.1
 tensorflow_addons~=0.15.0
 tensorflow-io~=0.20
 
