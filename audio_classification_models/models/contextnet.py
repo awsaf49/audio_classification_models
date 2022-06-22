@@ -1,7 +1,7 @@
 from typing import List
 import tensorflow as tf
 
-from tensorflow_asr.utils import math_util
+from ..utils import math_util
 
 L2 = tf.keras.regularizers.l2(1e-6)
 BLOCKS =[{'nlayers': 1, 'kernel_size': 5, 'filters': 256, 'strides': 1, 'residual': False, 'activation': 'silu'},
@@ -225,7 +225,7 @@ class ContextNetEncoder(tf.keras.Model):
     def __init__(
         self,
         blocks: List[dict] = BLOCKS,
-        alpha: float = 1.0,
+        alpha: float = 0.5,
         kernel_regularizer=None,
         bias_regularizer=None,
         **kwargs,
@@ -252,7 +252,8 @@ class ContextNetEncoder(tf.keras.Model):
         training=False,
         **kwargs,
     ):
-        outputs, input_length = inputs
+        outputs = inputs # shape: [B, T, F, C]
+        input_length  = tf.expand_dims(tf.shape(inputs)[1], axis=0) # spec time duration
         outputs = self.reshape(outputs)
         for block in self.blocks:
             outputs, input_length = block([outputs, input_length], training=training)
