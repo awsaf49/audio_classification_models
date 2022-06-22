@@ -5,10 +5,8 @@ librosa==0.8.1
 PyYAML==5.4.1
 Pillow==9.0.1
 
-# extra=tf2.6
 tensorflow==2.6.2
-# extra=tf2.6-gpu
-tensorflow-gpu==2.6.2
+# tensorflow-gpu==2.6.2
 
 tensorflow_io==0.21.0
 tensorflow_probability==0.14.1
