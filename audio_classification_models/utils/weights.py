@@ -3,7 +3,7 @@ import os
 
 def load_pretrain(model, url, fname):
     "Download weights from google drive using url then load weights to the model"
-    base_dir = '~/.keras/datasets/'
+    base_dir = '/root/.keras/datasets/'
     local_path = os.path.join(base_dir, fname)
     os.makedirs(base_dir, exist_ok=True)
     if not os.path.isfile(local_path):
