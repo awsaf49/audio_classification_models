@@ -1,15 +1,11 @@
-numpy>=1.19.5
+# numpy>=1.19.5
 gdown>=4.4.0
 
 
-# extra=tf2.6
-tensorflow~=2.6
-tensorflow_probability~=0.14.1
-tensorflow_addons~=0.15.0
-tensorflow-io~=0.20
+# # extra=tf2.6
+# tensorflow>=2.6.4
+# tensorflow_probability>=0.14.1
+# tensorflow_addons>=0.15.0
+# tensorflow-io>=0.21.0
 
-# extra=tf2.6-gpu
-tensorflow-gpu~=2.6
-tensorflow_probability~=0.14.1
-tensorflow_addons~=0.15.0
-tensorflow-io~=0.20
+# six>=1.16.0
