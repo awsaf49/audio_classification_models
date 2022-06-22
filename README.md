@@ -4,8 +4,6 @@
 </a>
 <img alt="python" src="https://img.shields.io/badge/python-%3E%3D3.6-blue?logo=python">
 <img alt="tensorflow" src="https://img.shields.io/badge/tensorflow-%3E%3D2.5.1-orange?logo=tensorflow">
-</p>
-</h1>
 <h2 align="center">
 <p>Audio Classification Models in Tensorflow 2.0</p>
 </h2>
@@ -13,3 +11,8 @@
 <p align="center">
 This library utilizes some automatic speech recognition architectures such as ContextNet, Conformer, etc for audio classification.
 </p>
+
+  
+  
+## Acknowledgement
+* [TensorflowASR](https://github.com/TensorSpeech/TensorFlowASR)
