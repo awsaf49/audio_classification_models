@@ -227,11 +227,12 @@ class ContextNetEncoder(tf.keras.Model):
         self,
         blocks: List[dict] = BLOCKS,
         alpha: float = 0.5,
-        kernel_regularizer=None,
-        bias_regularizer=None,
+        kernel_regularizer=L2,
+        bias_regularizer=L2,
+        name='contextnet_encoder',
         **kwargs,
     ):
-        super(ContextNetEncoder, self).__init__(**kwargs)
+        super(ContextNetEncoder, self).__init__(name=name, **kwargs)
 
         self.reshape = Reshape(name=f"{self.name}_reshape")
 
