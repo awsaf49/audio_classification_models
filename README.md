@@ -16,7 +16,7 @@ This library utilizes some automatic speech recognition architectures such as Co
   
 ## Installation
 ```shell
-pip install audio_classification_models
+pip install -U "audio_classification_models[tf2.6]" # or pip install -U "audio_classification_models[tf2.6-gpu]"
 ```
 or
 ```shell
