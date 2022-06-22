@@ -6,7 +6,7 @@ PyYAML==5.4.1
 Pillow==9.0.1
 
 # extra=tf2.6
-tensorflow==2.6.2
+tensorflow==2.7.2
 # extra=tf2.6-gpu
 tensorflow-gpu==2.6.2
 
