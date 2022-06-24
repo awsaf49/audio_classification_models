@@ -1,5 +1,5 @@
-# numpy>=1.19.5
-gdown>=4.4.0
+numpy>=1.19.5
+# gdown>=4.4.0
 
 
 # # extra=tf2.6
@@ -8,4 +8,4 @@ gdown>=4.4.0
 # tensorflow_addons>=0.15.0
 # tensorflow-io>=0.21.0
 
-# six>=1.16.0
+six>=1.16.0

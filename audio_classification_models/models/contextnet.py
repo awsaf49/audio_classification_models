@@ -4,7 +4,7 @@ import tensorflow as tf
 from ..utils import math_util, weights
 
 L2 = tf.keras.regularizers.l2(1e-6)
-URL = "https://drive.google.com/file/d/1BKUXuZVfiE6hEexV6QU3cozbXF-ZFObV/view?usp=sharing"
+URL = "https://github.com/awsaf49/audio_classification_models/releases/download/v1.0.8/contextnet.h5"
 BLOCKS =[{'nlayers': 1, 'kernel_size': 5, 'filters': 256, 'strides': 1, 'residual': False, 'activation': 'silu'},
          {'nlayers': 5,'kernel_size': 5,'filters': 256,'strides': 1,'residual': True,'activation': 'silu'},
          {'nlayers': 5,'kernel_size': 5,'filters': 256,'strides': 1,'residual': True,'activation': 'silu'},
@@ -266,7 +266,7 @@ def ContextNet(input_shape=(128, 80, 1), num_classes=1, final_activation='sigmoi
     backbone = ContextNetEncoder()
     out = backbone(inp)
     if pretrain:
-        weights.load_pretrain(backbone, url=URL, fname='contextnet.h5')
+        weights.load_pretrain(backbone, url=URL)
     out = tf.keras.layers.GlobalAveragePooling1D()(out)
     out = tf.keras.layers.Dense(32, activation='selu')(out)
     out = tf.keras.layers.Dense(num_classes, activation=final_activation)(out)
