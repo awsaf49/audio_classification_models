@@ -13,6 +13,10 @@
 This library utilizes some automatic speech recognition architectures such as ContextNet, Conformer, etc for audio classification.
 </p>
 
+## Kaggle Codes/Notebook
+This library is used in the following notebook,
+* [Fake Speech Detection: Conformer [TF]](https://www.kaggle.com/code/awsaf49/fake-speech-detection-conformer-tf) (Awarded for Google OSS Expert Award 2022)
+> **Note**: You can also access the notebook in [`/notebooks`](/notebooks) folder.
   
 ## Installation
 ```shell
@@ -28,10 +32,6 @@ pip install git+https://github.com/awsaf49/audio_classification_models
 import audio_classification_models as acm
 model = acm.Conformer(pretrain=True)
 ```
-## Kaggle Codes/Notebook
-This library is used in the following notebook,
-* [Fake Speech Detection: Conformer [TF]](https://www.kaggle.com/code/awsaf49/fake-speech-detection-conformer-tf) (Awarded for Google OSS Expert Award 2022)
-> **Note**: You can also access the notebook in [`/notebooks`](/notebooks) folder.
 
 ## Acknowledgement
 * [TensorflowASR](https://github.com/TensorSpeech/TensorFlowASR)
