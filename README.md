@@ -14,7 +14,7 @@ This library utilizes some automatic speech recognition architectures such as Co
 </p>
 
 ## Kaggle Codes/Notebook
-This library is used in the following notebook,
+This library is used in the following notebook for **Fake Speech Detection**.
 * [Fake Speech Detection: Conformer [TF]](https://www.kaggle.com/code/awsaf49/fake-speech-detection-conformer-tf) (Awarded for Google OSS Expert Award 2022)
 > **Note**: You can also access the notebook in [`/notebooks`](/notebooks) folder.
   
